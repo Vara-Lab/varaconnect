@@ -1,0 +1,62 @@
+{
+  "name": "varaconnect",
+  "version": "1.0.0",
+  "description": "SDK to connect WalletConnect with Vara Network",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build"
+  },
+  "keywords": [
+    "vara",
+    "substrate",
+    "blockchain",
+    "sdk",
+    "wallet",
+    "polkadot"
+  ],
+  "author": "A-mont",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vara-Lab/varaconnect.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@gear-js/api": "0.38.3",
+    "@polkadot/api": "13.2.1",
+    "@polkadot/extension-dapp": "0.47.4",
+    "@polkadot/extension-inject": "0.46.5",
+    "@polkadot/types": "15.9.1",
+    "@polkadot/wasm-crypto": "7.4.1",
+    "@polkadot/x-randomvalues": "13.4.3",
+    "@talismn/connect-wallets": "1.2.8",
+    "@walletconnect/modal": "^2.7.0",
+    "@walletconnect/sign-client": "^2.19.2",
+    "@walletconnect/types": "^2.19.2",
+    "@walletconnect/universal-provider": "^2.19.2"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.70.0",
+    "@web3modal/wagmi": "^5.1.11",
+    "react": ">=17.0.0",
+    "simplebar-react": "^3.3.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.19",
+    "@types/react": "18.2.33",
+    "@types/react-dom": "18.2.14",
+    "@vitejs/plugin-react-swc": "3.3.2",
+    "typescript": "4.9.5",
+    "vite": "4.3.9"
+  },
+  "resolutions": {
+    "@polkadot/util-crypto": "^13.1.1",
+    "@polkadot/keyring": "^13.1.1",
+    "@polkadot/util": "^13.1.1"
+  }
+}
