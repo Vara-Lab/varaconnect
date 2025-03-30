@@ -1,19 +1,28 @@
+const isVite = typeof import.meta !== "undefined" && typeof import.meta.env !== "undefined";
+
 const getEnv = (key: string): string | undefined => {
-  if (
-    typeof import.meta !== "undefined" &&
-    import.meta.env &&
-    (import.meta.env[`VITE_${key}`] || import.meta.env[`NEXT_PUBLIC_${key}`])
-  ) {
+  if (isVite) {
     return (
-      import.meta.env[`VITE_${key}`] || import.meta.env[`NEXT_PUBLIC_${key}`]
+      import.meta.env[`VITE_${key}`] ||
+      import.meta.env[`NEXT_PUBLIC_${key}`] ||
+      import.meta.env[key]
     );
   }
 
-  return (
-    process.env[`VITE_${key}`] ||
-    process.env[`NEXT_PUBLIC_${key}`] ||
-    process.env[key]
-  );
+  switch (key) {
+    case "PROJECT_ID":
+      return process.env.NEXT_PUBLIC_PROJECT_ID;
+    case "NODE_ADDRESS":
+      return process.env.NEXT_PUBLIC_NODE_ADDRESS;
+    case "NETWORK":
+      return process.env.NEXT_PUBLIC_NETWORK || process.env.NETWORK;
+    default:
+      return (
+        process.env[`VITE_${key}`] ||
+        process.env[`NEXT_PUBLIC_${key}`] ||
+        process.env[key]
+      );
+  }
 };
 
 function requireEnv(key: string): string {
@@ -23,6 +32,7 @@ function requireEnv(key: string): string {
   }
   return value;
 }
+
 
 const NETWORK = getEnv("NETWORK") || "mainnet";
 
