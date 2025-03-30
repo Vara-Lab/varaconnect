@@ -14,14 +14,24 @@
     "blockchain",
     "sdk",
     "wallet",
-    "polkadot"
+    "polkadot",
+    "walletconnect",
+    "react",
+    "typescript"
   ],
-  "author": "A-mont",
+  "author": {
+    "name": "A-mont",
+    "url": "https://github.com/vara-lab"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vara-Lab/varaconnect.git"
+    "url": "git+https://github.com/Vara-Lab/varaconnect.git"
   },
+  "bugs": {
+    "url": "https://github.com/Vara-Lab/varaconnect/issues"
+  },
+  "homepage": "https://github.com/Vara-Lab/varaconnect#readme",
   "files": [
     "dist"
   ],
